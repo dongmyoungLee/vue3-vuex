@@ -1,0 +1,13 @@
+<template>
+  <div>
+    z
+  </div>
+</template>
+
+<script setup>
+
+</script>
+
+<style lang="scss" scoped>
+
+</style>
