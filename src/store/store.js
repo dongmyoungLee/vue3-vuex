@@ -3,7 +3,6 @@ import {createStore} from "vuex";
 
 export default createStore({
     state: {
-        count: 0,
         weatherData: {
             icon: 'icon',
             temp: 0,
@@ -48,3 +47,6 @@ export default createStore({
         }
     }
 })
+
+
+

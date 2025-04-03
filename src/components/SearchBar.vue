@@ -4,8 +4,10 @@
       <div class="form-group">
         <input @input="inputText = $event.target.value" type="search" placeholder="지역을 입력해 주세요">
         <button @click="
-        $store.commit('onSearchCity', inputText);
-        $store.dispatch('getWeather');
+        store.onSearchCity(inputText);
+        store.getWeather();
+        // $store.commit('onSearchCity', inputText);
+        // $store.dispatch('getWeather');
         ">
           <font-awesome-icon class="icon" :icon="['fas', 'magnifying-glass']" />
         </button>
@@ -17,9 +19,15 @@
 <script setup>
 
   import {ref} from "vue";
+  import useStore from "@/store/piniaStore.js";
+  import {storeToRefs} from "pinia";
 
   const inputText = ref('');
   const emits = defineEmits(['onSearchCity'])
+
+  const store = useStore();
+  const { weatherData, toggle } = storeToRefs(store);
+
 </script>
 
 <style lang="scss" scoped>

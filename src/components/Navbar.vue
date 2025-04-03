@@ -1,12 +1,16 @@
 <template>
   <nav class="navbar">
-    <button class="toggle" @click="$store.commit('toggleButton')">
+    <input v-model="model" />
+    <button class="toggle" @click="store.toggleButton()">
       <font-awesome-icon class="icon" :icon="['fas', 'bars-staggered']"/>
     </button>
   </nav>
 </template>
 
 <script setup>
+import useStore from "@/store/piniaStore.js";
+const store = useStore();
+const model = defineModel();
 
 </script>
 
